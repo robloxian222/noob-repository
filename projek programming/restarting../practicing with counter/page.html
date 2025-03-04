@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+</head>
+<body>
+    <h1>Click the button!</h1>
+    <p>Count: <span id="count">0</span></p>
+    <button onclick="increaseCount()" id="buttons">Click Me</button>
+    <button onclick ="reset()">reset</button>
+
+    <script>
+        let count = 0; //this starts the counter on zero
+        function increaseCount(){
+            count++; //this makes the count go up (positive), so use count-- for negative counting
+            document.getElementById("count").innerText = count; //update the counter
+            
+            if(count > 5){
+            document.getElementById("count").innerText = "counter limit reached";//changes the number to a string when the counter exceed 5
+            document.getElementById("buttons").style.backgroundColor = "red";//turns the button color to red to add depth
+            document.getElementById("buttons").disabled = true;//disables button after counting more than 5
+        }
+        }
+        function reset(){
+    count = 0; // Reset the count
+    document.getElementById("count").innerText = count; // Update the display
+    document.getElementById("buttons").style.backgroundColor = ""; //when the button is disabled, it turns red so this code is to turn it back to normal
+    document.getElementById("buttons").disabled = false; //this turns the button back on because line 23 is disabling it
+}
+
+        
+       
+    </script>
+</body>
+</html>

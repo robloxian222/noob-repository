@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click & Enter Key Example</title>
+</head>
+<body>
+    <input type="text" id="layar">
+    <button id="tombol">tekan saya</button>
+
+    <script>
+        const layar = document.getElementById("layar");
+        const tombol = document.getElementById("tombol");
+
+        tombol.addEventListener("click", function() {
+            layar.value = "hallo"; // Correctly setting the value of input field
+        });
+
+        layar.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                layar.value = "hallo"; // Correctly setting the value of input field
+                tombol.click(); // Trigger the button click
+            }
+        });
+    </script>
+</body>
+</html>
